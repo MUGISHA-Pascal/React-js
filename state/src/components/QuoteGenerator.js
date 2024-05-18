@@ -16,7 +16,9 @@ class QuoteGenerator extends Component {
             <div>
                 <h1>Generate a quote</h1>
                 <button onClick={() => { this.Quotes() }}>Generate</button>
-                <h1>{this.state.quotes}</h1>
+                <ul>{this.state.quotes.map((value, index) => (
+                    <li>{value}</li>
+                ))}</ul>
             </div>
         );
     }
