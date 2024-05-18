@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import InteractiveText from './components/InteractiveText';
+// import InteractiveText from './components/InteractiveText';
 // import QuoteGenerator from './components/QuoteGenerator';
 // import Subscribe from './components/Subscribe';
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
       <div className="App">
         {/* <Subscribe /> */}
         {/* <QuoteGenerator /> */}
-        <InteractiveText/>
+        {/* <InteractiveText/> */}
       </div>
     );
   }
