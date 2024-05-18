@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import Subscribe from './components/Subscribe';
+import QuoteGenerator from './components/QuoteGenerator';
+// import Subscribe from './components/Subscribe';
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Subscribe />
+        {/* <Subscribe /> */}
+        <QuoteGenerator/>
       </div>
     );
   }
