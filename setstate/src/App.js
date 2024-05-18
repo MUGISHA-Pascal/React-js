@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import ColorGenerator from './components/ColorGenerator';
+import TextHighlight from './components/TextHighlight';
+// import ColorGenerator from './components/ColorGenerator';
 // import Count from './components/Count';
 
 class App extends Component {
@@ -9,7 +10,8 @@ class App extends Component {
     return (
       <div className="App">
         {/* <Count /> */}
-        <ColorGenerator/>
+        {/* <ColorGenerator/> */}
+        <TextHighlight />
       </div>
     );
   }
