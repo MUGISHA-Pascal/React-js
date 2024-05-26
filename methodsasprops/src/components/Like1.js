@@ -14,15 +14,17 @@ export class Like1 extends Component {
     }
     onlike() {
         this.setState({
-            like: "liked"
+            like: "liked",
+            // unlike:""
         })
         alert(`${this.state.like}`)
     }
     onunlike() {
         this.setState({
+            // like:"",
             unlike: "unliked"
         })
-        alert(`${this.state.like}`)
+        alert(`${this.state.unlike}`)
     }
 
 
