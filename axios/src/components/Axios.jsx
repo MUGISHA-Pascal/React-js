@@ -3,7 +3,7 @@ import axios from 'axios'
 
 function Axios() {
     async  function cal(){
-    await axios.get("http://localhost:3000/getdata").then((response)=>{
+    await axios.get("http://localhost:3000/getlocation").then((response)=>{
         console.log(response.data)
     }).catch((err)=>{
         console.log(err)
