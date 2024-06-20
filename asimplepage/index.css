@@ -15,6 +15,9 @@ body {
   background-color: black;
   font-family: sans-serif;
 }
+h1 {
+  color: white;
+}
 header h2 {
   font-size: 15px;
 }
@@ -23,6 +26,13 @@ header h2 {
 }
 video {
   width: 300px;
+  z-index: -1;
+  position: absolute;
+}
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 span {
   color: red;
