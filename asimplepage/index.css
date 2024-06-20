@@ -18,6 +18,12 @@ body {
 header h2 {
   font-size: 15px;
 }
+#about {
+  width: 300px;
+}
+video {
+  width: 300px;
+}
 span {
   color: red;
 }
@@ -36,7 +42,19 @@ a:hover {
 }
 
 @media only screen and (max-width: 768px) {
-  header {
+  /* header {
     background-color: green;
+  } */
+}
+@media only screen and (max-width: 482px) {
+  a {
+    font-size: 10px;
+  }
+  /* header nav {
+    display: block;
+    /* height: 100px; */
+  /* } */
+  header h1 {
+    font-size: 15px;
   }
 }
