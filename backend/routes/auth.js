@@ -1,12 +1,13 @@
 const authRoutes = require("express").Router();
 const passport = require("passport");
+const googleStrategy = require("passport-google-oauth20");
 
 authRoutes.get("/login/", (req, res) => {});
 authRoutes.get("/logout/", (req, res) => {});
 
 authRoutes.get(
   "/google/",
-  passport.authenticate("google", (scope = ["profile"])),
+  passport.authenticate("google", { scope: ["profile"] }),
   (req, res) => {
     res.send("you are logged in");
   }

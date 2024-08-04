@@ -8,6 +8,7 @@ const taskflow = require("./routes/taskflow");
 const passport = require("passport");
 const authRoutes = require("./routes/auth");
 const googleStrategy = require("passport-google-oauth20");
+const passportsetup = require("./config/passport_setup");
 
 app.set("view engine", "ejs");
 app.use("/auth/", authRoutes);
