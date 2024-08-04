@@ -1,10 +1,16 @@
 const authRoutes = require("express").Router();
 const passport = require("passport");
 const googleStrategy = require("passport-google-oauth20");
-
-authRoutes.get("/login/", (req, res) => {});
-authRoutes.get("/logout/", (req, res) => {});
-
+const cookieSession = require("cookie-session");
+authRoutes.get("/login/", (req, res) => {
+  res.render("login");
+});
+authRoutes.get("/logout/", (req, res) => {
+  res.logout();
+});
+authRoutes.use(cookieSession);
+passport.initialize();
+passport.session();
 authRoutes.get(
   "/google/",
   passport.authenticate("google", { scope: ["profile"] }),
