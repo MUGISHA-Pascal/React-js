@@ -3,10 +3,10 @@ const passport = require("passport");
 const keys = require("../keys");
 const user = require("../model/user");
 
-passport.serializeUser((user) => {
+passport.serializeUser((user, done) => {
   done(null, user.id);
 });
-passport.deserializeUser((id) => {
+passport.deserializeUser((id, done) => {
   user.findById(id).then((User) => {
     done(null, User);
   });
@@ -19,14 +19,19 @@ passport.use(
       clientID: keys.clientID,
       clientSecret: keys.clientSecret,
     },
-    (accessToken, refreshToken, profile, done) => {
-      const currentuser = user.findOne({ googleId: profile.id });
-      if (currentuser) {
-        console.log(currentuser);
-      } else {
-        user({ username: profile.username, googleId: profile.id }).save();
-      }
-      // console.log(profile);
+    async (accessToken, refreshToken, profile, done) => {
+      await user.findOne({ googleId: profile.id }).then((currentuser) => {
+        if (currentuser) {
+          console.log(currentuser);
+          done(null, currentuser);
+        } else {
+          const newuser = new user({
+            username: profile.displayName,
+            googleId: profile.id,
+          }).save();
+          done(null, newuser);
+        }
+      });
     }
   )
 );
