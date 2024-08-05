@@ -6,7 +6,7 @@ authRoutes.get("/login/", (req, res) => {
   res.render("login");
 });
 authRoutes.get("/logout/", (req, res) => {
-  res.logout();
+  req.logout();
 });
 
 authRoutes.get(
