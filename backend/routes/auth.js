@@ -5,8 +5,11 @@ const keys = require("../keys");
 authRoutes.get("/login/", (req, res) => {
   res.render("login");
 });
-authRoutes.get("/logout/", (req, res) => {
-  req.logout();
+
+authRoutes.get("/logout/", (req, res, next) => {
+  req.session.destroy();
+  res.clearCookie("my-custom-session-name");
+  res.redirect("/auth/login");
 });
 
 authRoutes.get(
