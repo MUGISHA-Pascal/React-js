@@ -6,6 +6,7 @@ const app = express();
 const bodyparser = require("body-parser");
 const session = require("express-session");
 const taskflow = require("./routes/taskflow");
+const profileRoutes = require("./routes/profileRoutes");
 const passport = require("passport");
 const authRoutes = require("./routes/auth");
 const passportsetup = require("./config/passport_setup");
@@ -28,6 +29,7 @@ app.use(bodyparser.json());
 mongoose.connect(keys.mongodb_url);
 app.use("/auth/", authRoutes);
 app.use("/taskflow", taskflow);
+app.use("/profile", profileRoutes);
 
 app.get("/", (req, res) => {
   res.render("home");

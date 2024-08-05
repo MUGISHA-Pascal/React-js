@@ -18,7 +18,7 @@ authRoutes.get(
   "/google/redirect",
   passport.authenticate("google"),
   (req, res) => {
-    res.send("you reached the call back function");
+    res.redirect("/profile/");
   }
 );
 
